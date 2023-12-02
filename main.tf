@@ -64,8 +64,6 @@ terraform {
     }
   }
 
-  
-  
   resource "aws_subnet" "my_private_subnet2" {
     vpc_id            = aws_vpc.my_vpc.id
     cidr_block        = "10.0.102.0/24"
@@ -284,7 +282,7 @@ terraform {
     db_subnet_group_name   = aws_db_subnet_group.arthurfonsek-db-subnet-group.name
     vpc_security_group_ids = [aws_security_group.db_security_group.id]
     skip_final_snapshot    = true
-    multi_az               = false
+    multi_az               = true
     backup_retention_period = 7
     backup_window = "00:00-00:30"
     maintenance_window = "Mon:01:00-Mon:03:00"
